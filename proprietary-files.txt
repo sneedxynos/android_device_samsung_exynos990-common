@@ -209,7 +209,8 @@ vendor/firmware/vts.bin
 vendor/firmware/yuv2bayer.bin
 
 # NFC
-vendor/firmware/nfc/sec_s3nsen4_firmware.bin
+system/etc/libnfc-nci.conf:vendor/etc/libnfc-nci.conf
+vendor/etc/libnfc-sec-vendor.conf
 
 # RIL
 -vendor/bin/cbd
