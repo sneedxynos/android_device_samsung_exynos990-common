@@ -873,6 +873,14 @@
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
 
+    <!-- List supported color modes. -->
+    <integer-array name="config_availableColorModes">
+        <item>0</item> <!-- COLOR_MODE_NATURAL -->
+        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
+        <item>2</item> <!-- COLOR_MODE_SATURATED -->
+        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
+    </integer-array>
+
     <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
          if the sensor HAL correctly handles the proximity sensor as a wake-up source.
