@@ -44,6 +44,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 endif
 
+# Camera
+$(call soong_config_set,exynos990CameraVars,exynos990_model,$(TARGET_DEVICE))
+
 # Compatibility Matrix
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
