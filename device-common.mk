@@ -359,7 +359,7 @@ PRODUCT_PACKAGES += \
 # WiFi
 ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
