@@ -51,10 +51,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # Bluetooth
+ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl:64 \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor:64
+endif
 
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -352,6 +354,7 @@ PRODUCT_PACKAGES += \
     libutils-v32
 
 # WiFi
+ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
@@ -363,6 +366,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+endif
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
