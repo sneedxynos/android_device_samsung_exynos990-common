@@ -230,7 +230,7 @@ vendor/etc/plmn_se13.bin
 -vendor/lib64/vendor.samsung.hardware.radio@2.1.so
 
 # RIL - from x1s - G980FXXSCDUK1
--vendor/bin/hw/rild|85f98906d824830d0e132fb63ea6adb1b99b08b9
+-vendor/bin/hw/rild|2982c9628c9f8f82ff579cdb1273baed47112dfc
 -vendor/lib64/libril-samsung.so|ae21d2979f849435331f7e5c224dd1ce61615eba
 -vendor/lib64/libsemnativecarrierfeature.so|ca44453cf7cca968606b56936be7de0d214d74be
 
