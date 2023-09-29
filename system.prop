@@ -13,9 +13,6 @@ ro.vendor.cscsupported=1
 ro.fastbootd.available=true
 
 # LKMD
-ro.lmk.log_stats=true
-
-# LKMD
 ro.lmk.psi_partial_stall_ms=70
 ro.lmk.psi_complete_stall_ms=700
 ro.lmk.thrashing_limit=100
