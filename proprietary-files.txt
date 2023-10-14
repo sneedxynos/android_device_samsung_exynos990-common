@@ -73,9 +73,6 @@ vendor/firmware/txse2.bin
 vendor/firmware/txse3.bin
 vendor/firmware/volumemonitor.bin
 
-# Bluetooth (A2DP)
--vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
-
 # Camera
 -vendor/lib64/libGrallocMapperCamera.so
 -vendor/lib64/libSEF.quram.so
