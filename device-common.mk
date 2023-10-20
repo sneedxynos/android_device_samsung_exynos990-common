@@ -30,8 +30,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
+    audio.primary.exynos990 \
     audio.r_submix.default \
-    audio.usb.default \
     libaudioroute \
     libtinyalsa \
     libtinycompress \
@@ -313,7 +313,6 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libaudioparams_shim \
     libshim_sensorndkbridge
 
 # Shipping API level
