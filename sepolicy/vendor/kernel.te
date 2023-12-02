@@ -23,3 +23,4 @@ allow kernel {
 allow kernel per_boot_file:file r_file_perms;
 
 allow kernel self:capability mknod;
+allow kernel self:perf_event cpu;
