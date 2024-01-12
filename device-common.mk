@@ -25,8 +25,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@5.0-impl:32 \
-    android.hardware.audio@5.0-impl:32 \
+    android.hardware.audio.effect@7.0-impl:32 \
+    android.hardware.audio@7.0-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
@@ -51,12 +51,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # Bluetooth
-ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl:64 \
-    android.hardware.bluetooth@1.0-service \
-    libbt-vendor:64
-endif
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth.a2dp@1.0.vendor
 
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -90,7 +87,7 @@ PRODUCT_PACKAGES += \
 
 # FastCharge
 PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.1-service.samsung
+    vendor.lineage.fastcharge@1.0-service.samsung
 
 # Fingerprint
 PRODUCT_PACKAGES += \

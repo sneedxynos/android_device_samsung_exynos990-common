@@ -38,11 +38,11 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Bluetooth
-ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
-endif
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_HAS_QCA_BT_ROME := true
+QCOM_BT_USE_BTNV := true
+QCOM_BT_USE_SMD_TTY := true
 
 # Compatibility Matrix
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
@@ -180,24 +180,22 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Wi-Fi
-ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
-BOARD_WLAN_BCMDHD_SAE                         := true
-BOARD_WLAN_DEVICE                             := bcmdhd
-BOARD_WPA_SUPPLICANT_DRIVER                   := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB              := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER                          := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB                     := lib_driver_cmd_bcmdhd
-CONFIG_IEEE80211AX                            := true
-WIFI_AVOID_IFACE_RESET_MAC_CHANGE             := true
-WIFI_FEATURE_HOSTAPD_11AX                     := true
-WIFI_HIDL_FEATURE_AWARE                       := true
-WIFI_HIDL_FEATURE_DUAL_INTERFACE              := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+CONFIG_IEEE80211AX := true
+WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_FW_PATH_AP  := "ap"
+WIFI_DRIVER_FW_PATH_P2P := "p2p"
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-WPA_SUPPLICANT_VERSION                        := VER_0_8_X
-endif
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 
 # Call Samsung LSI board support package
-include hardware/samsung_slsi-linaro/config/BoardConfig990.mk
+include hardware/samsung_slsi-linaro/config/BoardConfig9830.mk
 
 # Call the proprietary setup
 include vendor/samsung/exynos990-common/BoardConfigVendor.mk
