@@ -329,6 +329,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0.vendor \
     android.hardware.thermal-service.samsung \
     thermal_symlinks.samsung
 
