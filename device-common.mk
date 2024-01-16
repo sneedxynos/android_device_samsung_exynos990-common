@@ -314,7 +314,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libaudioparams_shim \
-    libsensorndkbridge_shim
+    libshim_sensorndkbridge
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
