@@ -76,7 +76,7 @@ function blob_fixup() {
             sed -i 's/str_parms_get_str/str_parms_get_mod/g' "${2}"
             ;;
         vendor/lib*/libsensorlistener.so)
-            "${PATCHELF}" --add-needed libsensorndkbridge_shim.so "${2}"
+            "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
             ;;
         vendor/lib*/libskeymaster4device.so)
             "${PATCHELF}" --replace-needed libcrypto.so libcrypto-v33.so "${2}"
