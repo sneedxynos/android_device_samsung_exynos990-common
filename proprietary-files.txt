@@ -225,11 +225,13 @@ vendor/etc/plmn_se13.bin
 -vendor/lib64/libsecnativefeature.so
 
 # Secure Element
--vendor/bin/hw/android.hardware.secure_element@1.2-service
-vendor/etc/init/android.hardware.secure_element@1.2-service.rc
-vendor/etc/libse-gto-hal.conf
--vendor/lib64/android.hardware.secure_element-impl-gto.so
--vendor/lib64/libsec_semRil.so
+
+# c1s vendor uses secure element 1.1, so noope
+# -vendor/bin/hw/android.hardware.secure_element@1.2-service
+# vendor/etc/init/android.hardware.secure_element@1.2-service.rc
+# vendor/etc/libse-gto-hal.conf
+# -vendor/lib64/android.hardware.secure_element-impl-gto.so
+# -vendor/lib64/libsec_semRil.so
 
 # Sensors
 -vendor/lib64/sensors.flicker.so
