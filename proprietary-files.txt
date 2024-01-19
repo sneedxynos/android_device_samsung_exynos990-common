@@ -196,7 +196,7 @@ vendor/firmware/yuv2bayer.bin
 
 # NFC
 system/etc/libnfc-nci.conf:vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-sec-vendor.conf
+# vendor/etc/libnfc-sec-vendor.conf does not exist in c1s vendor. How sad.
 
 # RIL
 -vendor/bin/cbd
