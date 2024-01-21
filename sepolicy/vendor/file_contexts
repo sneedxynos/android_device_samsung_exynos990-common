@@ -38,6 +38,8 @@
 
 # Bluetooth
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@[0-9]\.[0-9]-service-qti      u:object_r:hal_bluetooth_default_exec:s0
+/dev/btpower                                u:object_r:bt_device:s0
+
 
 # Camera
 /dev/jsqz                u:object_r:jsqz_device:s0
