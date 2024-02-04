@@ -113,6 +113,8 @@ BOARD_MKBOOTIMG_ARGS := --base 0x10000000 --pagesize 2048 --dtb_offset 0x0000000
 #BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_CLANG_VERSION := r450784e
+TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos990
 
