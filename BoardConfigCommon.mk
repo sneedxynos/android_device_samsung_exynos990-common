@@ -203,7 +203,7 @@ WPA_SUPPLICANT_VERSION                        := VER_0_8_X
 endif
 
 # Call Samsung LSI board support package
-include hardware/samsung_slsi-linaro/config/BoardConfig990.mk
+include hardware/samsung_slsi-linaro/config/BoardConfig9830.mk
 
 # Call the proprietary setup
 include vendor/samsung/exynos990-common/BoardConfigVendor.mk
