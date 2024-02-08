@@ -300,7 +300,10 @@ PRODUCT_PACKAGES += \
     init.baseband.rc \
     init.vendor.rilchip.rc \
     init.vendor.rilcommon.rc \
-    secril_config_svc
+    secril_config_svc \
+    android.hardware.radio.voice-V1-ndk.vendor:64 \
+    libnetutils.vendor:64 \
+    libsqlite.vendor:64
 
 # SamsungDoze
 PRODUCT_PACKAGES += \
