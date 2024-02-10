@@ -34,13 +34,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
-# Bluetooth
-ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
-endif
-
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
@@ -192,23 +185,6 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Vulkan
 TARGET_USES_VULKAN := true
-
-# Wi-Fi
-ifneq ($(BOARD_WLAN_DEVICE),qcwcn)
-BOARD_WLAN_BCMDHD_SAE                         := true
-BOARD_WLAN_DEVICE                             := bcmdhd
-BOARD_WPA_SUPPLICANT_DRIVER                   := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB              := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER                          := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB                     := lib_driver_cmd_bcmdhd
-CONFIG_IEEE80211AX                            := true
-WIFI_AVOID_IFACE_RESET_MAC_CHANGE             := true
-WIFI_FEATURE_HOSTAPD_11AX                     := true
-WIFI_HIDL_FEATURE_AWARE                       := true
-WIFI_HIDL_FEATURE_DUAL_INTERFACE              := true
-WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-WPA_SUPPLICANT_VERSION                        := VER_0_8_X
-endif
 
 # Call Samsung LSI board support package
 include hardware/samsung_slsi-linaro/config/BoardConfig9830.mk
