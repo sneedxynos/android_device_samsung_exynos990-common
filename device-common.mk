@@ -325,6 +325,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/samsung
 
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.samsung \
