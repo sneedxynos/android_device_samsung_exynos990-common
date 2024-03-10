@@ -326,6 +326,14 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung
 
 $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+# SoundTrigger
+
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.3-impl:32 \
+    sound_trigger.primary.exynos990
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Thermal
 PRODUCT_PACKAGES += \
